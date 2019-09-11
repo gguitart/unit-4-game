@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
 
 
 </head>
@@ -34,31 +37,31 @@
                 <img src="blue.jpg" alt="Blue" width="200" height="200">
                 <button id="blue">Button</button>
             </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-pink">
-                <img src="pink.jpg" alt="Pink" width="200" height="200">
-                <button id="pink">Button</button>
+            <div class="col-sm-3">
+                <div class="container-pink">
+                    <img src="pink.jpg" alt="Pink" width="200" height="200">
+                    <button id="pink">Button</button>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-yellow">
-                <img src="yellow.jpg" alt="Pink" width="200" height="200">
-                <button id="yellow">Button</button>
+            <div class="col-sm-3">
+                <div class="container-yellow">
+                    <img src="yellow.jpg" alt="Pink" width="200" height="200">
+                    <button id="yellow">Button</button>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-green">
-                <img src="green.jpg" alt="Pink" width="200" height="200">
-                <button id="green">Button</button>
+            <div class="col-sm-3">
+                <div class="container-green">
+                    <img src="green.jpg" alt="Pink" width="200" height="200">
+                    <button id="green">Button</button>
+                </div>
             </div>
         </div>
     </div>
 
     <div>
-        Jewel Number: <span id="jewelNumber">0</span>
+        Jewel Number: <span id="jewelNumber">0</span><br>
+        Taget Number: <span id="finalComputernumber"></span>
     </div>
-
 
 
     <script>
@@ -74,41 +77,78 @@
         var lossNumber = 0;
 
         console.log(finalComputernumber);
-        document.write("Computer Guess: " + finalComputernumber);
 
         //got this function from W3 schools, think there is an easier way that doesn't require identificaiton of two different variables
 
 
         $(document).ready(function () {
             $("#blue").on("click", function () {
-                alert("You have picked the blue jewel, which value is: " + blueNumber);
                 jewelNumber += blueNumber;
                 $("#jewelNumber").text(jewelNumber);
                 console.log(jewelNumber);
+                if (jewelNumber == finalComputernumber) {
+                    winNumber++
+                    console.log("wins: " + winNumber);
+                    $("#winNumber").text(winNumber);
+                }
+                if (jewelNumber > finalComputernumber) {
+                    lossNumber++;
+                    console.log("losses: " + lossNumber);
+                    $("#lossNumber").text(lossNumber);
+                }
             });
             $("#pink").on("click", function () {
-                alert("You have picked the pink jewel, which value is: " + pinkNumber);
                 jewelNumber += pinkNumber;
                 $("#jewelNumber").text(jewelNumber);
                 console.log(jewelNumber);
+                if (jewelNumber == finalComputernumber) {
+                    winNumber++
+                    console.log("wins: " + winNumber);
+                    $("#winNumber").text(winNumber);
+                }
+                if (jewelNumber > finalComputernumber) {
+                    lossNumber++;
+                    console.log("losses: " + lossNumber);
+                    $("#lossNumber").text(lossNumber);
+                };
             })
             $("#yellow").on("click", function () {
-                alert("You have picked the yellow jewel, which value is: " + yellowNumber);
                 jewelNumber += yellowNumber;
                 $("#jewelNumber").text(jewelNumber);
                 console.log(jewelNumber);
+                if (jewelNumber == finalComputernumber) {
+                    winNumber++
+                    console.log("wins: " + winNumber);
+                    $("#winNumber").text(winNumber);
+                }
+                if (jewelNumber > finalComputernumber) {
+                    lossNumber++;
+                    console.log("losses: " + lossNumber);
+                    $("#lossNumber").text(lossNumber);
+                };
             })
             $("#green").on("click", function () {
-                alert("You have picked the green jewel, which value is: " + greenNumber);
                 jewelNumber += greenNumber;
                 $("#jewelNumber").text(jewelNumber);
                 console.log(jewelNumber);
-
-                if (jewelNumber == finalComputernumber) (winNumber += 1)
-                else (lossNumber += 1);
+                if (jewelNumber == finalComputernumber) {
+                    winNumber++
+                    console.log("wins: " + winNumber);
+                    $("#winNumber").text(winNumber);
+                }
+                if (jewelNumber > finalComputernumber) {
+                    lossNumber++;
+                    console.log("losses: " + lossNumber);
+                    $("#lossNumber").text(lossNumber);
+                };
             })
 
-           
+                
+
+
+
+            $("#finalComputernumber").text(finalComputernumber);
+
 
         });
 

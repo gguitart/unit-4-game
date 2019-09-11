@@ -6,11 +6,12 @@
     width: 25%;
 }
 
-body {
-    background-image: url("just-waves.jpg")
+body{
+    background-image: url("just-waves.jpg");
+    
 }
 
-.instructions {
+.intructions {
     width: 30%;
     background-color: #FFF8DC;
     color: #228B22;
