@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <div class="Header">
+        <h1>The Crystals Collector!</h1>
+    </div>
+    <div class="intructions">
+        <p>Instructions: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in leo enim. Curabitur ornare
+            luctus enim, non consequat nunc aliquam ut. Pellentesque mauris sem, ullamcorper vitae libero nec, imperdiet
+            lacinia tellus. Cras fringilla mattis elementum. Nullam dapibus mattis molestie. Etiam placerat velit nec
+            nisl varius, a placerat quam rutrum. Etiam vehicula nibh purus. Praesent sapien nunc, pulvinar sit amet
+            pellentesque eu, elementum eu dolor. Vestibulum vel diam tempus, dignissim elit sit amet, commodo ligula.
+            Sed venenatis feugiat sapien ac elementum. Suspendisse maximus a ligula vitae vehicula. Aliquam tincidunt
+            varius elit eget consequat.</p>
+    </div>
+    <!--Here I am implementing a button to generate a random computer number-->
+
+    <!--Here I am implementing a button on top of the jewel-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="blue.jpg" alt="Blue" width="200" height="200">
+                <button id="blue">Button</button>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="container-pink">
+                <img src="pink.jpg" alt="Pink" width="200" height="200">
+                <button id="pink">Button</button>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="container-yellow">
+                <img src="yellow.jpg" alt="Pink" width="200" height="200">
+                <button id="yellow">Button</button>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="container-green">
+                <img src="green.jpg" alt="Pink" width="200" height="200">
+                <button id="green">Button</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        Jewel Number: <span id="jewelNumber">0</span>
+    </div>
+
+
+
+    <script>
+        //creating variables for the jewelNumber (the points clicking on the jewels will add up to)
+        // and creating variable for the random number the computer generates
+        var jewelNumber = 0;
+        var finalComputernumber = Math.floor((Math.random() * 100) + 1);
+        var blueNumber = Math.floor((Math.random() * 12) + 1);
+        var pinkNumber = Math.floor((Math.random() * 12) + 1);
+        var yellowNumber = Math.floor((Math.random() * 12) + 1);
+        var greenNumber = Math.floor((Math.random() * 12) + 1);
+        var winNumber = 0;
+        var lossNumber = 0;
+
+        console.log(finalComputernumber);
+        document.write("Computer Guess: " + finalComputernumber);
+
+        //got this function from W3 schools, think there is an easier way that doesn't require identificaiton of two different variables
+
+
+        $(document).ready(function () {
+            $("#blue").on("click", function () {
+                alert("You have picked the blue jewel, which value is: " + blueNumber);
+                jewelNumber += blueNumber;
+                $("#jewelNumber").text(jewelNumber);
+                console.log(jewelNumber);
+            });
+            $("#pink").on("click", function () {
+                alert("You have picked the pink jewel, which value is: " + pinkNumber);
+                jewelNumber += pinkNumber;
+                $("#jewelNumber").text(jewelNumber);
+                console.log(jewelNumber);
+            })
+            $("#yellow").on("click", function () {
+                alert("You have picked the yellow jewel, which value is: " + yellowNumber);
+                jewelNumber += yellowNumber;
+                $("#jewelNumber").text(jewelNumber);
+                console.log(jewelNumber);
+            })
+            $("#green").on("click", function () {
+                alert("You have picked the green jewel, which value is: " + greenNumber);
+                jewelNumber += greenNumber;
+                $("#jewelNumber").text(jewelNumber);
+                console.log(jewelNumber);
+
+                if (jewelNumber == finalComputernumber) (winNumber += 1)
+                else (lossNumber += 1);
+            })
+
+           
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.Header { 
+    background-color: #D2691E;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 25%;
+}
+
+body {
+    background-image: url("just-waves.jpg")
+}
+
+.instructions {
+    width: 30%;
+    background-color: #FFF8DC;
+    color: #228B22;
+}
